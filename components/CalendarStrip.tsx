@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { isDateDisabled } from '@/lib/clinicData';
 
 const DAY_NAMES = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
@@ -51,8 +51,7 @@ export default function CalendarStrip({ selectedDate, onSelect }: Props) {
   const dragStartX = useRef(0);
   const dragScrollLeft = useRef(0);
 
-  const days = generateDays(60);
-  const groups = groupByMonth(days);
+  const groups = useMemo(() => groupByMonth(generateDays(60)), []);
 
   useEffect(() => {
     if (selectedRef.current && scrollRef.current) {
@@ -111,8 +110,9 @@ export default function CalendarStrip({ selectedDate, onSelect }: Props) {
                 <button
                   key={date.toISOString()}
                   ref={selected ? selectedRef : null}
+                  disabled={disabled}
                   onClick={() => {
-                    if (hasDragged.current || disabled) return;
+                    if (hasDragged.current) return;
                     onSelect(date);
                   }}
                   className={`flex flex-col items-center justify-center w-[44px] h-[56px] rounded-xl transition-colors
