@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"c:\\\\Users\\\\User\\\\YandexDisk\\\\UrFU\")",
+      "Read(//c/Users/User/YandexDisk/UrFU/**)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\User\\\\Desktop\\\\abc\\\\vismuth\\\\frontend\" -Depth 2 | Where-Object { $_.Name -notmatch \"node_modules|\\\\.next\" } | Select-Object FullName, PSIsContainer)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\User\\\\Desktop\\\\abc\\\\vismuth\\\\frontend\\\\src\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName | Head-Object -First 50)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\User\\\\Desktop\\\\abc\\\\vismuth\\\\frontend\\\\src\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object -First 60 FullName)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\User\\\\Desktop\\\\abc\\\\vismuth\" -Recurse -Filter \"package.json\" | Where-Object { $_.FullName -notmatch \"node_modules\" } | Select-Object FullName)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\User\\\\Desktop\\\\ЕАМК\\\\Сайт клиники\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName | Select-Object -First 30)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\User\\\\YandexDisk\" -Recurse -Filter \"package.json\" -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch \"node_modules\" } | Select-Object FullName)"
+    ]
+  }
+}
