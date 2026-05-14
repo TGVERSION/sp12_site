@@ -24,7 +24,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
-            src="/logo.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/logo.png`}
             alt="ГАУЗ СО СП №12"
             width={302}
             height={49}
@@ -32,7 +32,7 @@ export default function Header() {
             className="h-[49px] w-auto max-w-[302px] object-contain hidden lg:block"
           />
           <Image
-            src="/logo.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/logo.png`}
             alt="ГАУЗ СО СП №12"
             width={130}
             height={21}
