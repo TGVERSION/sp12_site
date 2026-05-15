@@ -36,7 +36,7 @@ export default function Header() {
       {/* ── Desktop (>960px) ── */}
       <div className="hidden min-[960px]:grid grid-cols-[302px_1fr_auto] items-center min-h-[80px] px-5 gap-[45px]">
 
-        <Link href="/" className="shrink-0">
+        <Link href="http://vismuth.ru/sp12sait" className="shrink-0">
           <Image
             src={`${basePath}/logo.png`}
             alt="ГАУЗ СО СП №12"
@@ -122,7 +122,7 @@ export default function Header() {
 
       {/* ── Mobile bar (≤960px) ── */}
       <div className="min-[960px]:hidden flex items-center justify-between min-h-[64px] px-5">
-        <Link href="/">
+        <Link href="http://vismuth.ru/sp12sait">
           <Image
             src={`${basePath}/logo.png`}
             alt="ГАУЗ СО СП №12"
