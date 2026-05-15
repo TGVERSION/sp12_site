@@ -7,18 +7,18 @@ import { useState } from 'react';
 import { X } from 'lucide-react';
 
 const NAV_LINKS = [
-  { href: 'http://vismuth.ru/sp12doctor', label: 'Врачи' },
-  { href: 'http://vismuth.ru/sp12price', label: 'Цены' },
-  { href: '', label: 'Пациентам' },
-  { href: '/schedule', label: 'График работы' },
+  { href: 'https://vismuth.tilda.ws/sp12doctor', label: 'Врачи' },
+  { href: 'https://vismuth.tilda.ws/sp12price', label: 'Цены' },
+  { href: 'https://vismuth.tilda.ws/sp12patients', label: 'Пациентам' },
+  { href: 'https://tgversion.github.io/sp12_site/schedule', label: 'График работы' },
 ];
 
 const ABOUT_LINKS = [
   { href: 'http://vismuth.ru/sp12oclinic', label: 'Контакты' },
-  { href: '', label: 'Отзывы' },
-  { href: '', label: 'Новости' },
-  { href: '', label: 'Вакансии' },
-  { href: '', label: '3D-тур' },
+  { href: 'http://vismuth.ru/sp12otz', label: 'Отзывы' },
+  { href: 'http://vismuth.ru/sp12news', label: 'Новости' },
+  { href: 'http://vismuth.ru/sp12vak', label: 'Вакансии' },
+  { href: 'https://af66site.ru/66site/2017/s12-1/', label: '3D-тур' },
 ];
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
@@ -47,7 +47,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="flex items-center justify-center gap-[30px]">
+        <nav className="flex items-center justify-center gap-[60px]">
           {NAV_LINKS.map(({ href, label }) => {
             const active = isActive(href);
             if (!href) return (
