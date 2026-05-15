@@ -1,13 +1,14 @@
 import type { Clinic, Department } from '@/lib/types';
 import { departmentColors } from '@/lib/clinicData';
-import { MapPin } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react';
 
 interface Props {
   clinic: Clinic;
   workingDepts: Department[];
+  hours: string;
 }
 
-export default function ClinicCard({ clinic, workingDepts }: Props) {
+export default function ClinicCard({ clinic, workingDepts, hours }: Props) {
   return (
     <div className="bg-white rounded-2xl p-5 shadow-[0_2px_12px_rgba(0,0,0,0.07)] flex flex-col gap-4 border border-gray-100">
       <div className="flex items-start gap-2">
@@ -32,6 +33,10 @@ export default function ClinicCard({ clinic, workingDepts }: Props) {
           ))}
         </div>
       )}
+      <div className="flex items-center gap-1.5">
+        <Clock size={13} className="text-gray-400 shrink-0" />
+        <span className="text-[13px] text-gray-500">{hours}</span>
+      </div>
     </div>
   );
 }

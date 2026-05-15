@@ -56,6 +56,17 @@ function seededRandom(seed: number): () => number {
   };
 }
 
+const weekdaySlots = ['с 8 до 20', 'с 8 до 21', 'с 9 до 18', 'с 9 до 19', 'с 10 до 20'];
+const saturdaySlots = ['с 8 до 14', 'с 8 до 15', 'с 9 до 15', 'с 9 до 16'];
+
+export function getWorkingHours(clinicId: number, date: Date): string {
+  const isSat = date.getDay() === 6;
+  const slots = isSat ? saturdaySlots : weekdaySlots;
+  const seed = clinicId * 17 + dayOfYear(date) * 3 + date.getFullYear() + 999;
+  const rand = seededRandom(seed);
+  return slots[Math.floor(rand() * slots.length)];
+}
+
 export function getWorkingDepartments(clinicId: number, date: Date): Department[] {
   if (date.getDay() === 0) return [];
 

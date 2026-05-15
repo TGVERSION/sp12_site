@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import ScheduleControls from './ScheduleControls';
 import ClinicCard from './ClinicCard';
-import { clinics, getWorkingDepartments } from '@/lib/clinicData';
+import { clinics, getWorkingDepartments, getWorkingHours } from '@/lib/clinicData';
 import type { DepartmentFilter as DeptFilter } from '@/lib/types';
 
 function getInitialDate(): Date {
@@ -20,6 +20,7 @@ export default function ScheduleContent() {
   const clinicsWithDepts = clinics.map((c) => ({
     clinic: c,
     workingDepts: getWorkingDepartments(c.id, selectedDate),
+    hours: getWorkingHours(c.id, selectedDate),
   }));
 
   const filtered = clinicsWithDepts.filter(({ workingDepts }) =>
@@ -40,11 +41,12 @@ export default function ScheduleContent() {
             Нет клиник с выбранным отделением
           </p>
         ) : (
-          filtered.map(({ clinic, workingDepts }) => (
+          filtered.map(({ clinic, workingDepts, hours }) => (
             <ClinicCard
               key={clinic.id}
               clinic={clinic}
               workingDepts={workingDepts}
+              hours={hours}
             />
           ))
         )}
