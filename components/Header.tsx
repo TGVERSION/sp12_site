@@ -7,10 +7,10 @@ import { useState } from 'react';
 import { X } from 'lucide-react';
 
 const NAV_LINKS = [
-  { href: 'http://vismuth.ru/sp12doctor', label: 'Врачи', external: true },
-  { href: 'http://vismuth.ru/sp12price', label: 'Цены', external: true },
-  { href: '', label: 'Пациентам', external: false },
-  { href: '/schedule', label: 'График работы', external: false },
+  { href: 'http://vismuth.ru/sp12doctor', label: 'Врачи' },
+  { href: 'http://vismuth.ru/sp12price', label: 'Цены' },
+  { href: '', label: 'Пациентам' },
+  { href: '/schedule', label: 'График работы' },
 ];
 
 const ABOUT_LINKS = [
@@ -47,8 +47,8 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="flex items-center justify-center gap-5">
-          {NAV_LINKS.map(({ href, label, external }) => {
+        <nav className="flex items-center justify-center gap-[30px]">
+          {NAV_LINKS.map(({ href, label }) => {
             const active = isActive(href);
             if (!href) return (
               <span
@@ -61,7 +61,6 @@ export default function Header() {
               <Link
                 key={href}
                 href={href}
-                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 style={{ fontFamily: 'Arial, sans-serif' }}
                 className={`text-[16px] whitespace-nowrap transition-colors duration-300 ${
                   active ? 'text-[#015442]' : 'text-[#101010] hover:text-[#015442]'
@@ -87,8 +86,6 @@ export default function Header() {
                   <Link
                     key={label}
                     href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     style={{ fontFamily: 'Arial, sans-serif' }}
                     className="block px-4 py-2 text-[18px] text-[#101010] hover:text-[#015442] transition-colors duration-200"
                   >{label}</Link>
@@ -112,8 +109,6 @@ export default function Header() {
           >+7 343 200 20 12</a>
           <a
             href="https://sp12zapis.medap.me/"
-            target="_blank"
-            rel="noopener noreferrer"
             style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '1px' }}
             className="bg-[#015442] hover:bg-[#003b2e] text-white text-[16px] px-[25px] py-[12px] rounded-[10px] transition-colors duration-200 whitespace-nowrap"
           >Записаться</a>
@@ -166,7 +161,7 @@ export default function Header() {
         </button>
 
         <nav className="flex flex-col items-end gap-5">
-          {NAV_LINKS.map(({ href, label, external }) => {
+          {NAV_LINKS.map(({ href, label }) => {
             const active = isActive(href);
             if (!href) return (
               <span
@@ -179,7 +174,6 @@ export default function Header() {
               <Link
                 key={href}
                 href={href}
-                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 onClick={() => setSidebarOpen(false)}
                 style={{ fontFamily: 'Arial, sans-serif' }}
                 className={`text-[16px] transition-colors duration-300 ${
@@ -211,17 +205,15 @@ export default function Header() {
                     <Link
                       key={label}
                       href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       onClick={() => setSidebarOpen(false)}
                       style={{ fontFamily: 'Arial, sans-serif' }}
-                      className="text-[18px] text-[#101010] hover:text-[#015442] transition-colors"
+                      className="text-[16px] text-[#101010] hover:text-[#015442] transition-colors"
                     >{label}</Link>
                   ) : (
                     <span
                       key={label}
                       style={{ fontFamily: 'Arial, sans-serif' }}
-                      className="text-[18px] text-[#101010] cursor-default"
+                      className="text-[16px] text-[#101010] cursor-default"
                     >{label}</span>
                   )
                 )}
@@ -238,8 +230,6 @@ export default function Header() {
           >+7 343 200 20 12</a>
           <a
             href="https://sp12zapis.medap.me/"
-            target="_blank"
-            rel="noopener noreferrer"
             style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '1px' }}
             className="bg-[#015442] hover:bg-[#003b2e] text-white text-[16px] px-5 py-3 rounded-[10px] transition-colors duration-200 w-full text-center"
           >Записаться</a>
