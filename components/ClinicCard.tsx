@@ -33,7 +33,7 @@ export default function ClinicCard({ clinic, workingDepts, hours }: Props) {
           ))}
         </div>
       )}
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-1.5 mt-auto">
         <Clock size={13} className="text-gray-400 shrink-0" />
         <span className="text-[13px] text-gray-500">{hours}</span>
       </div>
