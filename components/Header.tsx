@@ -54,7 +54,7 @@ export default function Header() {
               <span
                 key={label}
                 style={{ fontFamily: 'Arial, sans-serif' }}
-                className="text-[20px] text-[#101010] whitespace-nowrap cursor-default select-none"
+                className="text-[16px] text-[#101010] whitespace-nowrap cursor-default select-none"
               >{label}</span>
             );
             return (
@@ -63,7 +63,7 @@ export default function Header() {
                 href={href}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 style={{ fontFamily: 'Arial, sans-serif' }}
-                className={`text-[20px] whitespace-nowrap transition-colors duration-300 ${
+                className={`text-[16px] whitespace-nowrap transition-colors duration-300 ${
                   active ? 'text-[#015442]' : 'text-[#101010] hover:text-[#015442]'
                 }`}
               >{label}</Link>
@@ -74,7 +74,7 @@ export default function Header() {
           <div className="relative group">
             <button
               style={{ fontFamily: 'Arial, sans-serif' }}
-              className="text-[20px] text-[#101010] group-hover:text-[#015442] transition-colors duration-300 whitespace-nowrap flex items-center gap-1 cursor-pointer bg-transparent border-none p-0"
+              className="text-[16px] text-[#101010] group-hover:text-[#015442] transition-colors duration-300 whitespace-nowrap flex items-center gap-1 cursor-pointer bg-transparent border-none p-0"
             >
               О клинике
               <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
@@ -172,7 +172,7 @@ export default function Header() {
               <span
                 key={label}
                 style={{ fontFamily: 'Arial, sans-serif' }}
-                className="text-[20px] text-[#101010] cursor-default"
+                className="text-[16px] text-[#101010] cursor-default"
               >{label}</span>
             );
             return (
@@ -182,7 +182,7 @@ export default function Header() {
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 onClick={() => setSidebarOpen(false)}
                 style={{ fontFamily: 'Arial, sans-serif' }}
-                className={`text-[20px] transition-colors duration-300 ${
+                className={`text-[16px] transition-colors duration-300 ${
                   active ? 'text-[#015442]' : 'text-[#101010] hover:text-[#015442]'
                 }`}
               >{label}</Link>
@@ -194,7 +194,7 @@ export default function Header() {
             <button
               onClick={() => setAboutOpen(v => !v)}
               style={{ fontFamily: 'Arial, sans-serif' }}
-              className="text-[20px] text-[#101010] hover:text-[#015442] transition-colors flex items-center gap-1.5 bg-transparent border-none cursor-pointer"
+              className="text-[16px] text-[#101010] hover:text-[#015442] transition-colors flex items-center gap-1.5 bg-transparent border-none cursor-pointer"
             >
               О клинике
               <svg
